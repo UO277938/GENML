@@ -96,13 +96,18 @@
         <!-- CUERPO -->
         <xs:element name="cuerpo">
                 <xs:complexType>
-                <xs:sequence>
-                        <xs:element ref="encabezado" minOccurs="0"/>
-                        <xs:element ref="navegacion" minOccurs="0"/>
-                        <xs:element ref="aparte" minOccurs="0"/>
-                        <xs:element ref="principal" minOccurs="0"/>
-                        <xs:element ref="pie" minOccurs="0"/>
-                </xs:sequence>
+                        <xs:choice>
+                                <xs:group ref="contenidoElemento"
+                                        minOccurs="0"
+                                        maxOccurs="unbounded"/>
+                                <xs:sequence>
+                                        <xs:element ref="encabezado" minOccurs="0"/>
+                                        <xs:element ref="navegacion" minOccurs="0"/>
+                                        <xs:element ref="aparte" minOccurs="0"/>
+                                        <xs:element ref="principal" minOccurs="0"/>
+                                        <xs:element ref="pie" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:choice>
                 </xs:complexType>
         </xs:element>
 
