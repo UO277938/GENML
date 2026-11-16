@@ -1,7 +1,7 @@
 const es = {
   translation: {
     app: {
-      title: "Editor XML",
+      title: "GENML",
       kicker: "XML WORKSPACE",
       help: "Ayuda"
     },

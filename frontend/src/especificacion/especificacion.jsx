@@ -33,7 +33,7 @@ export const baseDtd = `<!-- REUTILIZABLE -->
 <!ELEMENT resumen %contenidoTexto;>
 
 <!-- SECCIONES -->
-<!ELEMENT cuerpo ((%contenidoElemento;)* | (encabezado?, navegacion?, aparte?, principal?, pie?))>
+<!ELEMENT cuerpo ((%contenidoElemento;)* | (encabezado?, navegacion?, principal?, pie?))>
 
 <!ELEMENT articulo ((%contenidoElemento;)*)>
 <!ELEMENT seccion ((%contenidoElemento;)*)>
@@ -279,13 +279,17 @@ export const  baseXsd = `<?xml version="1.0" encoding="UTF-8"?>
         <!-- CUERPO -->
         <xs:element name="cuerpo">
                 <xs:complexType>
-                <xs:sequence>
-                        <xs:element ref="encabezado" minOccurs="0"/>
-                        <xs:element ref="navegacion" minOccurs="0"/>
-                        <xs:element ref="aparte" minOccurs="0"/>
-                        <xs:element ref="principal" minOccurs="0"/>
-                        <xs:element ref="pie" minOccurs="0"/>
-                </xs:sequence>
+                        <xs:choice>
+                                <xs:group ref="contenidoElemento"
+                                        minOccurs="0"
+                                        maxOccurs="unbounded"/>
+                                <xs:sequence>
+                                        <xs:element ref="encabezado" minOccurs="0"/>
+                                        <xs:element ref="navegacion" minOccurs="0"/>
+                                        <xs:element ref="principal" minOccurs="0"/>
+                                        <xs:element ref="pie" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:choice>
                 </xs:complexType>
         </xs:element>
 
@@ -723,4 +727,4 @@ export const baseXml = `<?xml version="1.0"?>
 
 export const baseHtml = `Aqui obtendrás un HTML a partir de tu XML válido.
 
-Pulsa Generar HTML cuando el XML sea válido en DTD y XSD para obtener un buen HTML.`;
+Pulsa Generar HTML cuando el XML sea válido en DTD y XSD para obtener su HTML.`;
