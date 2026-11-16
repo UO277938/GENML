@@ -30,13 +30,6 @@ npm run dev
 To run it you need Java JDK, Maven and SpringBoot.
 In the folder /backend, use the editor launch option or F5.
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
