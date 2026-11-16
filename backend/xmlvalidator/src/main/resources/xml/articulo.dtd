@@ -33,7 +33,7 @@
 <!ELEMENT resumen %contenidoTexto;>
 
 <!-- SECCIONES -->
-<!ELEMENT cuerpo ((%contenidoElemento;)* | (encabezado?, navegacion?, aparte?, principal?, pie?))>
+<!ELEMENT cuerpo ((%contenidoElemento;)* | (encabezado?, navegacion?, principal?, pie?))>
 
 <!ELEMENT articulo ((%contenidoElemento;)*)>
 <!ELEMENT seccion ((%contenidoElemento;)*)>

@@ -11,6 +11,7 @@ import HelpPanel from "./componentes/HelpPanel";
 import {baseXml, baseHtml} from "./especificacion/especificacion.jsx";
 import { useTranslation } from "react-i18next";
 
+
 export default function App() {
   const [activeTab, setActiveTab] = useState("xml");
   const { t, i18n } = useTranslation();
@@ -27,10 +28,13 @@ export default function App() {
 
   const [html, setHtml] = useState(baseHtml);
 
+  const [showResults, setShowResults] = useState(true);
+
   const handleValidate = async () => {
     if (activeTab !== "xml" || loading) return;
 
     setLoading(true);
+    setShowResults(true);
 
     try {
       const res = await validate(xml, i18n.language);
@@ -190,7 +194,7 @@ export default function App() {
 
             
 
-            {valid !== null && (
+            {valid !== null && showResults && (
               <section
                 className={
                   valid
@@ -200,6 +204,14 @@ export default function App() {
               >
 
                 <header className="results-header">
+                  <button
+                    type="button"
+                    className="results-close"
+                    onClick={() => setShowResults(false)}
+                    aria-label={t("help.close")}
+                  >
+                    ×
+                  </button>
                   <div>
                     <span className="results-label">
                       {t("validation.result")}

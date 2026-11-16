@@ -651,3 +651,35 @@ body {
   background: #5a5a5a;
 }
 
+/* Redimensionar ventana de resultados */
+.results-panel {
+  position: relative;
+  min-height: 150px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+/* Boton para cerrar resultados */
+.results-header {
+  position: relative;
+  padding-right: 35px;
+}
+
+.results-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+  line-height: 1;
+}
+
+.results-close:hover {
+  opacity: 0.7;
+}
+
+
